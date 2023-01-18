@@ -1,0 +1,539 @@
+$main-color: #fcb900;
+$nav-background-color: #fdf9ff;
+$content-background-color: #f2f2fc;
+$title-color: #302e4d;
+$paragraph-color: #504e70;
+$border-color: #e8dfec;
+@import url("https://fonts.googleapis.com/css2?family=Clicker+Script&family=Poppins:wght@200;300;400;500;600;700&display=swap");
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  outline: none;
+}
+body {
+  font-size: 16px;
+  font-family: "Poppins" sans-serif;
+  line-height: 1.5;
+}
+
+::before,
+::after {
+  box-sizing: border-box;
+}
+
+.menu-list {
+  position: fixed;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 90px;
+  z-index: 10;
+  background: $nav-background-color;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-right: 1px solid $border-color;
+}
+
+.menu-bar {
+  list-style-type: none;
+  width: 100%;
+
+  ion-icon {
+    color: $title-color;
+  }
+  .active {
+    background-color: $main-color;
+  }
+  li {
+    text-align: center;
+    line-height: 100px;
+    font-size: 2rem;
+    &:hover {
+      background-color: $main-color;
+    }
+  }
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  left: 90px;
+  top: 0;
+  right: 0;
+  opacity: 1;
+  z-index: 0;
+  section {
+    padding-left: 90px;
+    width: 100%;
+    min-height: 100vh;
+    padding: 0 30px;
+  }
+}
+
+.container {
+  max-width: 1100px;
+  width: 100%;
+  margin: auto;
+  padding-top: 60px;
+  padding-bottom: 70px;
+}
+
+.title {
+  flex: 0 0 100%;
+  max-width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-bottom: 60px;
+  h2 {
+    font-size: 40px;
+    font-weight: 700;
+    color: $title-color;
+    position: relative;
+
+    &::before {
+      content: "";
+      height: 5px;
+      width: 200px;
+      background-color: $main-color;
+      position: absolute;
+      top: 100%;
+      margin-top: 15px;
+    }
+  }
+}
+
+.shadow {
+  box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+// home
+.home-container {
+  background-color: $content-background-color;
+  display: flex;
+  min-height: 100vh;
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+    .info {
+      flex: 0 0 60%;
+      max-width: 60%;
+
+      .name-intro {
+        font-size: 28px;
+        margin: 15px 0;
+        color: $title-color;
+        .name {
+          font-family: "Clicker Script", cursive;
+          font-size: 3rem;
+          font-weight: 700;
+          color: $main-color;
+        }
+      }
+      .profession-intro {
+        font-size: 30px;
+        margin: 15px 0;
+        color: $title-color;
+        .occupation {
+          color: $main-color;
+        }
+      }
+
+      p {
+        margin-bottom: 70px;
+        font-size: 20px;
+        color: #504e70;
+      }
+
+      .btn {
+        font-size: 1rem;
+        font-weight: 500;
+        padding: 12px 35px;
+        color: #fff;
+        border-radius: 40px;
+        display: inline-block;
+        white-space: nowrap;
+        background-color: $main-color;
+        transition: all 0.3s ease;
+        cursor: pointer;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+  .home-img {
+    flex: 0 0 40%;
+    max-width: 40%;
+    text-align: center;
+    position: relative;
+    img {
+      height: 400px;
+      margin: auto;
+      border-radius: 5px;
+    }
+
+    &::after {
+      content: "";
+      position: absolute;
+      height: 80px;
+      width: 80px;
+      right: 20px;
+      bottom: -40px;
+      border-bottom: 10px solid $main-color;
+      border-right: 10px solid $main-color;
+    }
+
+    &::before {
+      content: "";
+      position: absolute;
+      height: 80px;
+      width: 80px;
+      left: -20px;
+      top: -40px;
+      border-top: 10px solid $main-color;
+      border-left: 10px solid $main-color;
+    }
+  }
+}
+
+// about
+.aboutMe-container {
+  background-color: $content-background-color;
+  display: flex;
+  min-height: 100vh;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+  .about-content {
+    flex: 0 0 100%;
+    max-width: 100%;
+    .education,
+    .experience {
+      flex: 0 0 50%;
+      max-width: 50%;
+      margin-top: 30px;
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+
+  h3.title {
+    font-size: 24px;
+    margin-bottom: 30px;
+    font-weight: 700;
+    color: $title-color;
+  }
+
+  .timeline-container {
+    padding-left: 15px;
+    padding-right: 15px;
+    flex: 0 0 100%;
+    max-width: 100%;
+
+    .timeline {
+      background-color: $nav-background-color;
+      padding: 30px 15px;
+      border: 1px solid $border-color;
+      width: 100%;
+      border-radius: 10px;
+      position: relative;
+
+      .timeline-item {
+        position: relative;
+        padding-left: 37px;
+        padding-bottom: 50px;
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+
+        &::before {
+          content: "";
+          width: 1px;
+          position: absolute;
+          height: 100%;
+          left: 7px;
+          background-color: $main-color;
+        }
+      }
+
+      .dot {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 15px;
+        width: 15px;
+        border-radius: 50%;
+        background-color: $main-color;
+      }
+
+      .date {
+        font-weight: 400;
+        font-size: 14px;
+        margin-bottom: 12px;
+        color: $paragraph-color;
+
+        .calendar {
+          margin-right: 5px;
+        }
+      }
+
+      .timeline-title {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 15px;
+        text-transform: capitalize;
+        color: $title-color;
+      }
+
+      .timeline-text {
+        line-height: 25px;
+        font-size: 1rem;
+        text-align: justify;
+        color: $paragraph-color;
+      }
+    }
+  }
+}
+
+//offer
+.offers-container {
+  background-color: $content-background-color;
+  display: flex;
+  min-height: 100vh;
+
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+
+  .offer-item {
+    margin-bottom: 30px;
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    position: relative;
+    height: 250px;
+    box-shadow: inset 5px 5px 5px rgba(0, 0, 0, 0.05),
+      inset -5px -5px 5px rgba(255, 255, 255, 0.5),
+      5px 5px 5px rgba(0, 0, 0, 0.05), -5px -5px 5px rgba(255, 255, 255, 0.5);
+    border-radius: 15px;
+
+    &:hover {
+      .card-box {
+        transform: translateY(-50px);
+        box-shadow: 0 10px 40px rgba(0, 0, 0, 0.4);
+        background: linear-gradient(45deg, $main-color, #cefc00);
+        .offer-item-content {
+          ion-icon {
+            color: rgba(0, 0, 0, 0.2);
+          }
+
+          h3,
+          p {
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+
+  .card-box {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+    background-color: $nav-background-color;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+
+    .offer-item-content {
+      padding: 20px;
+      text-align: center;
+    }
+
+    ion-icon {
+      position: absolute;
+      top: 5px;
+      right: 30px;
+      font-size: 5rem;
+      color: rgba(0, 0, 0, 0.1);
+      transition: 0.5s;
+    }
+
+    h3 {
+      font-size: 2rem;
+      color: $title-color;
+      z-index: 1;
+      transition: 0.5s;
+    }
+
+    p {
+      font-size: 1rem;
+      font-weight: 300;
+      color: $paragraph-color;
+      z-index: 1;
+      transition: 0.5s;
+    }
+  }
+}
+
+//contact
+.contact-container {
+  background-color: $content-background-color;
+  display: flex;
+  min-height: 100vh;
+  .row {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -15px;
+    margin-right: -15px;
+    position: relative;
+  }
+
+  .contact-body {
+    background-color: $nav-background-color;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    padding: 10px;
+    text-align: center;
+  }
+
+  .contact-map {
+    width: 100%;
+    height: auto;
+    flex: 50%;
+
+    iframe {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .contact-form {
+    width: 100%;
+    height: auto;
+    flex: 50%;
+    padding: 30px;
+  }
+
+  .contact-form h1 {
+    color: $main-color;
+    margin-bottom: 10px;
+  }
+
+  .contact-item {
+    width: 100%;
+    height: 40px;
+    color: #000;
+    border: 1px solid $border-color;
+    border-radius: 50px;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 15px;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  .contact-item-area {
+    width: 100%;
+    height: 130px;
+    color: #000;
+    border: 1px solid $border-color;
+    border-radius: 10px;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 15px;
+
+    &::placeholder {
+      color: #aaa;
+    }
+  }
+
+  .btn {
+    border: none;
+    font-size: 1rem;
+    font-weight: 500;
+    padding: 12px 35px;
+    color: #fff;
+    border-radius: 40px;
+    display: inline-block;
+    white-space: nowrap;
+    background-color: $main-color;
+    transition: all 0.3s ease;
+    cursor: pointer;
+
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.bar-controller {
+  position: fixed;
+  right: 60px;
+  top: 60px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+@media (max-width: 1600px) {
+  .bar-controller {
+    display: none;
+  }
+}
+
+@media (max-width: 1350px) {
+  .menu-list {
+    display: none;
+  }
+  .bar-controller {
+    display: block;
+  }
+}
+
+@media (max-width: 991px) {
+  .home-img {
+    display: none;
+  }
+  .home-container .row .info {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
+  .offers-container .offer-item {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 570px) {
+  .aboutMe-container .about-content .education,
+  .aboutMe-container .about-content .experience,
+  .offers-container .offer-item {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
