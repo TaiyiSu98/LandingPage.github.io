@@ -12,6 +12,11 @@ $border-color: #e8dfec;
   text-decoration: none;
   outline: none;
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-size: 16px;
   font-family: "Poppins" sans-serif;
